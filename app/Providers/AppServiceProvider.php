@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace APIGas\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
