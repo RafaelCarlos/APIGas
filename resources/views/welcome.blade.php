@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    EasyGás
                 </div>
 
                 <div class="links">

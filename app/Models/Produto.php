@@ -1,6 +1,6 @@
 <?php
 
-namespace APIGas;
+namespace APIGas\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
