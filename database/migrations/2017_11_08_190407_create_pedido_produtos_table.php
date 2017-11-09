@@ -13,6 +13,7 @@ class CreatePedidoProdutosTable extends Migration {
      */
     public function up() {
         Schema::create('pedido_produtos', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('produto_id')->unsigned();
             $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade');
             $table->integer('pedido_id')->unsigned();

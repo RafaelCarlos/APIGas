@@ -13,6 +13,7 @@ class CreateUsuarioDistribuidorasTable extends Migration {
      */
     public function up() {
         Schema::create('usuario_distribuidoras', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->integer('distribuidora_id')->unsigned();

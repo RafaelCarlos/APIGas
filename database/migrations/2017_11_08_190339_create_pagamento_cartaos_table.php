@@ -13,7 +13,7 @@ class CreatePagamentoCartaosTable extends Migration {
      */
     public function up() {
         Schema::create('pagamento_cartaos', function (Blueprint $table) {
-
+            $table->increments('id');
             $table->integer('pagamento_id')->unsigned();
             $table->foreign('pagamento_id')->references('id')->on('pagamentos')->onDelete('cascade');
             $table->integer('cartao_id')->unsigned();
