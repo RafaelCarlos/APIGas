@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuarioDistribuidorasTable extends Migration {
+class CreateUsuarioEnderecosTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateUsuarioDistribuidorasTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('usuario_distribuidoras', function (Blueprint $table) {
+        Schema::create('usuario_enderecos', function (Blueprint $table) {
             $table->integer('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
-            $table->integer('distribuidora_id')->unsigned();
-            $table->foreign('distribuidora_id')->references('id')->on('distribuidoras')->onDelete('cascade');
+            $table->integer('endereco_id')->unsigned();
+            $table->foreign('endereco_id')->references('id')->on('enderecos')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ class CreateUsuarioDistribuidorasTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('usuario_distribuidoras');
+        Schema::dropIfExists('usuario_enderecos');
     }
 
 }

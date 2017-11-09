@@ -15,7 +15,7 @@ class CreateCarteirasTable extends Migration {
         Schema::create('carteiras', function (Blueprint $table) {
             $table->increments('id');
             $table->decimal('saldo', 5, 2);
-            $table->integer('usuario_id');
+            $table->integer('usuario_id')->unsigned();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });

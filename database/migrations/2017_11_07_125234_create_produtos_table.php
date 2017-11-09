@@ -18,8 +18,8 @@ class CreateProdutosTable extends Migration {
             $table->string('descricao');
             $table->decimal('valor_venda', 5, 2);
             $table->decimal('valor_minimo', 5, 2);
-            $table->integer('estoque_id')->unsigned();
-            $table->foreign('estoque_id')->references('id')->on('estoques')->onDelete('cascade');
+            $table->integer('distribuidora_id')->unsigned();
+            $table->foreign('distribuidora_id')->references('id')->on('distribuidoras')->onDelete('cascade');
             $table->timestamps();
         });
     }

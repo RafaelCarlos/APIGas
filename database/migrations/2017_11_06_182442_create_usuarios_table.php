@@ -15,14 +15,14 @@ class CreateUsuariosTable extends Migration {
         //Criando a tabela produto com esses atributos.
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->string('email');
-            $table->string('senha');
-            $table->string('telefone');
-            $table->string('id_facebook');
+            $table->string('nome', 50);
+            $table->string('email', 50);
+            $table->string('senha', 255);
+            $table->string('telefone', 15);
+            $table->string('id_facebook', 100);
             $table->boolean('ativo');
-            $table->string('token');
-            $table->string('token_fcm');
+            $table->string('token', 255);
+            $table->string('token_fcm', 255);
             $table->timestamps();
         });
     }

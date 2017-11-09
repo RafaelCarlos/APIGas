@@ -14,14 +14,14 @@ class CreateDistribuidorasTable extends Migration {
     public function up() {
         Schema::create('distribuidoras', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome_fantasia');
-            $table->string('razao_social');
+            $table->string('nome_fantasia', 50);
+            $table->string('razao_social', 50);
             $table->boolean('status_aberto');
             $table->timestamp("horario_aberto");
             $table->timestamp('horario_fechado');
-            $table->string('cnpj');
-            $table->string('inscricao_estadual');
-            $table->integer('endereco_id');
+            $table->string('cnpj', 20);
+            $table->string('inscricao_estadual', 15);
+            $table->integer('endereco_id')->unsigned();
             $table->foreign('endereco_id')->references('id')->on('enderecos');
             $table->timestamps();
         });

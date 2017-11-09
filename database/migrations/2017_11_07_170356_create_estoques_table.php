@@ -14,8 +14,10 @@ class CreateEstoquesTable extends Migration {
     public function up() {
         Schema::create('estoques', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('saldo_atual');
-            $table->string('saldo_inicial');
+            $table->integer('saldo_atual');
+            $table->integer('saldo_inicial');
+            $table->integer('produto_id')->unsigned();
+            $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade');
             $table->timestamps();
         });
     }
